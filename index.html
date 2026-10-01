@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEAPC - Igreja Evangélica Aliança Plena em Colombo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B2341',
+                            navyLight: '#14355E',
+                            navyDark: '#061325',
+                            gold: '#D4AF37',
+                            goldLight: '#E5C158',
+                            goldDark: '#B8860B',
+                            sand: '#F8F9FA'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #B8860B 100%);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+        }
+        .glass-card {
+            background: rgba(11, 35, 65, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans bg-brand-sand text-slate-800 antialiased selection:bg-brand-gold selection:text-brand-navy">
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-brand-navy/95 backdrop-blur-md border-b border-brand-gold/30 shadow-lg" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center p-1 border-2 border-brand-gold shadow-md group-hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 200 200" class="w-full h-full">
+                            <circle cx="100" cy="100" r="95" fill="#0B2341" stroke="#D4AF37" stroke-width="6"/>
+                            <!-- Globe Grid -->
+                            <circle cx="100" cy="55" r="30" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+                            <path d="M70,55 Q100,75 130,55" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+                            <path d="M70,55 Q100,35 130,55" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+                            <line x1="100" y1="25" x2="100" y2="85" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+                            <!-- Bible / Open Book -->
+                            <path d="M40,120 Q100,100 100,140 Q100,100 160,120 Q160,150 100,135 Q40,150 40,120 Z" fill="#D4AF37"/>
+                            <path d="M45,123 Q100,105 100,140 Q100,105 155,123" fill="none" stroke="#0B2341" stroke-width="2"/>
+                            <!-- Worshippers -->
+                            <circle cx="100" cy="85" r="8" fill="#E5C158"/>
+                            <path d="M85,110 C85,95 100,90 100,90 C100,90 115,95 115,110 Z" fill="#E5C158"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-lg md:text-xl font-bold tracking-wider gold-gradient-text leading-tight">IEAPC</span>
+                        <span class="text-[10px] md:text-xs text-slate-300 tracking-widest uppercase font-medium">Aliança Plena • Colombo</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-200">
+                    <a href="#inicio" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Início</a>
+                    <a href="#sobre" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Sobre Nós</a>
+                    <a href="#pilares" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Nossos Pilares</a>
+                    <a href="#cultos" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Cultos</a>
+                    <a href="#oracao" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Pedido de Oração</a>
+                    <a href="#dizimos" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Ofertar / Dízimo</a>
+                    <a href="#contato" class="hover:text-brand-gold transition-colors py-2 border-b-2 border-transparent hover:border-brand-gold">Contato</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="#cultos" class="gold-gradient-bg text-brand-navy font-bold px-5 py-2.5 rounded-full hover:brightness-110 transition-all shadow-md hover:shadow-lg flex items-center gap-2 text-sm gold-glow">
+                        <i class="fa-solid fa-church"></i>
+                        <span>Faça uma Visita</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-brand-gold focus:outline-none p-2" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-navyDark border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold border-b border-slate-800">Início</a>
+            <a href="#sobre" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold border-b border-slate-800">Sobre Nós</a>
+            <a href="#pilares" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold border-b border-slate-800">Nossos Pilares</a>
+            <a href="#cultos" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold border-b border-slate-800">Cultos & Horários</a>
+            <a href="#oracao" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold border-b border-slate-800">Pedido de Oração</a>
+            <a href="#dizimos" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold border-b border-slate-800">Ofertar / Dízimo</a>
+            <a href="#contato" class="mobile-link block py-2 text-slate-200 hover:text-brand-gold">Contato & Localização</a>
+            <div class="pt-2">
+                <a href="#cultos" class="mobile-link block text-center gold-gradient-bg text-brand-navy font-bold py-3 rounded-xl shadow">
+                    Faça uma Visita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center bg-brand-navy overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 -left-32 w-96 h-96 bg-brand-navyLight/50 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center my-auto z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-gold text-xs sm:text-sm font-medium tracking-wide mb-6 border border-brand-gold/30">
+                <i class="fa-solid fa-cross text-brand-gold"></i>
+                <span>Igreja Evangélica Aliança Plena em Colombo - PR</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-serif font-extrabold text-white leading-tight tracking-tight mb-6">
+                Bem-vindo à Igreja Evangélica <br class="hidden sm:block"><span class="gold-gradient-text">Aliança Plena</span> em Colombo
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                Um ambiente de fé, comunhão e restauração fundamentado na <strong class="text-brand-gold font-semibold">Palavra</strong>, fortalecido pela <strong class="text-brand-gold font-semibold">Comunicação</strong> e movido pela <strong class="text-brand-gold font-semibold">Missão</strong>.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#cultos" class="w-full sm:w-auto gold-gradient-bg text-brand-navy font-bold px-8 py-4 rounded-xl shadow-lg hover:brightness-110 transition-all gold-glow text-center flex items-center justify-center gap-3">
+                    <i class="fa-regular fa-calendar-check text-lg"></i>
+                    <span>Nossos Cultos & Horários</span>
+                </a>
+                <a href="#pilares" class="w-full sm:w-auto border-2 border-brand-gold/80 text-brand-gold hover:bg-brand-gold/10 font-semibold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-compass text-lg"></i>
+                    <span>Conheça Nossos Pilares</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pilares" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-goldDark tracking-widest uppercase mb-2">A Base do Nosso Chamado</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy">Nossos 3 Pilares Fundamentais</p>
+                <div class="w-20 h-1.5 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 mt-4 text-base">
+                    Tudo o que fazemos na IEAPC é sustentado por estes três princípios bíblicos essenciais.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- PILAR 1: PALAVRA -->
+                <div class="bg-brand-sand rounded-2xl p-8 border border-slate-200/90 shadow-lg hover:shadow-2xl transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 left-0 right-0 h-2 gold-gradient-bg"></div>
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-brand-navy text-brand-gold flex items-center justify-center text-3xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-bible"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-widest uppercase text-brand-goldDark">Primeiro Pilar</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy mt-1 mb-4">PALAVRA</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Firmados na Bíblia Sagrada como nossa única regra de fé e prática. Dedicamos ao ensino doutrinário, pregando a verdade imutável do Evangelho de Cristo para a edificação e libertação de vidas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brand-navy">
+                        <i class="fa-solid fa-check text-brand-gold mr-2"></i> Estudo e Pregação Expositiva
+                    </div>
+                </div>
+
+                <!-- PILAR 2: COMUNICAÇÃO -->
+                <div class="bg-brand-sand rounded-2xl p-8 border border-slate-200/90 shadow-lg hover:shadow-2xl transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 left-0 right-0 h-2 gold-gradient-bg"></div>
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-brand-navy text-brand-gold flex items-center justify-center text-3xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-widest uppercase text-brand-goldDark">Segundo Pilar</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy mt-1 mb-4">COMUNICAÇÃO</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Ponte de conexão real entre a igreja e a comunidade de Colombo. Promovemos o acolhimento caloroso, transparência, comunhão viva, presença digital e transmissões de esperança.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brand-navy">
+                        <i class="fa-solid fa-check text-brand-gold mr-2"></i> Conexão, Redes & Acolhimento
+                    </div>
+                </div>
+
+                <!-- PILAR 3: MISSÃO -->
+                <div class="bg-brand-sand rounded-2xl p-8 border border-slate-200/90 shadow-lg hover:shadow-2xl transition-all duration-300 relative group overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 left-0 right-0 h-2 gold-gradient-bg"></div>
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-brand-navy text-brand-gold flex items-center justify-center text-3xl mb-6 shadow-md group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <span class="text-xs font-bold tracking-widest uppercase text-brand-goldDark">Terceiro Pilar</span>
+                        <h3 class="font-serif text-2xl font-bold text-brand-navy mt-1 mb-4">MISSÃO</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            O Ide de Jesus na prática. Atuamos com compaixão no evangelismo de rua, projetos e ações sociais locais em Colombo, e suporte para a expansão do Reino até os confins da terra.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200/60 flex items-center text-xs font-semibold text-brand-navy">
+                        <i class="fa-solid fa-check text-brand-gold mr-2"></i> Evangelismo & Ação Social
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xs font-semibold text-brand-goldDark tracking-widest uppercase mb-2">Conheça a IEAPC</h2>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy mb-6">
+                        Uma Aliança de Amor com Deus e de Cuidado com Pessoas
+                    </h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        A <strong>Igreja Evangélica Aliança Plena em Colombo (IEAPC)</strong> é uma comunidade cristã vibrante e comprometida em ser um refúgio espiritual e canal de bênção para as famílias paranaenses.
+                    </p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Nossa identidade gráfica une a autoridade da <strong>Palavra (A Bíblia)</strong>, o engajamento das pessoas na <strong>Comunicação (Aconchego e Comunhão)</strong> e o propósito de <strong>Missão (O Globo)</strong> de alcançar cada bairro de Colombo e além.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#oracao" class="inline-flex items-center gap-2 font-bold text-brand-navy hover:text-brand-goldDark transition-colors">
+                            <span>Precisa de uma oração hoje?</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Graphic Emblem Card -->
+                <div class="relative flex justify-center">
+                    <div class="w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-brand-navy flex items-center justify-center p-8 shadow-2xl border-4 border-brand-gold/50 text-center relative">
+                        <div class="absolute inset-3 border border-brand-gold/30 rounded-full"></div>
+                        <div class="z-10 text-white space-y-2">
+                            <i class="fa-solid fa-hands-holding-circle text-5xl text-brand-gold mb-2"></i>
+                            <h4 class="font-serif text-2xl font-bold gold-gradient-text">IEAPC</h4>
+                            <p class="text-xs uppercase tracking-widest text-slate-300">Aliança Plena • Colombo</p>
+                            <p class="text-[11px] text-brand-goldLight italic pt-2">"Palavra • Comunicação • Missão"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cultos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-brand-goldDark tracking-widest uppercase mb-2">Venha Estar Conosco</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy">Horários dos Cultos</p>
+                <div class="w-20 h-1.5 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Domingos -->
+                <div class="bg-brand-sand rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200">
+                    <div class="bg-brand-navy p-6 text-white text-center">
+                        <i class="fa-solid fa-house-chimney-window text-4xl text-brand-gold mb-3"></i>
+                        <h3 class="font-serif text-2xl font-bold">Culto da Família</h3>
+                        <p class="text-brand-goldLight text-sm font-medium mt-1">Domingos às 19:00h</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Celebração e adoração comunitária para renovar suas forças espirituais em família para toda a semana.
+                        </p>
+                        <div class="text-xs text-slate-500 pt-4 border-t border-slate-200 flex justify-between">
+                            <span><i class="fa-regular fa-clock text-brand-gold font-bold mr-1"></i> 19h00</span>
+                            <span><i class="fa-solid fa-child text-brand-gold font-bold mr-1"></i> Com Culto Infantil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quartas -->
+                <div class="bg-brand-sand rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200">
+                    <div class="bg-brand-navy p-6 text-white text-center">
+                        <i class="fa-solid fa-book-open-reader text-4xl text-brand-gold mb-3"></i>
+                        <h3 class="font-serif text-2xl font-bold">Ensino da Palavra</h3>
+                        <p class="text-brand-goldLight text-sm font-medium mt-1">Quartas-feiras às 19:30h</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Estudo sistemático da Palavra de Deus e momentos intensos de clamor e intercessão.
+                        </p>
+                        <div class="text-xs text-slate-500 pt-4 border-t border-slate-200 flex justify-between">
+                            <span><i class="fa-regular fa-clock text-brand-gold font-bold mr-1"></i> 19h30</span>
+                            <span><i class="fa-solid fa-scroll text-brand-gold font-bold mr-1"></i> Doutrina Bíblica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sábados -->
+                <div class="bg-brand-sand rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-200">
+                    <div class="bg-brand-navy p-6 text-white text-center">
+                        <i class="fa-solid fa-fire-flame-curved text-4xl text-brand-gold mb-3"></i>
+                        <h3 class="font-serif text-2xl font-bold">Jovens & Oração</h3>
+                        <p class="text-brand-goldLight text-sm font-medium mt-1">Sábados às 19:30h</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Encontro jovem com louvor contemporâneo, dinâmica, busca do Espírito Santo e comunhão.
+                        </p>
+                        <div class="text-xs text-slate-500 pt-4 border-t border-slate-200 flex justify-between">
+                            <span><i class="fa-regular fa-clock text-brand-gold font-bold mr-1"></i> 19h30</span>
+                            <span><i class="fa-solid fa-users text-brand-gold font-bold mr-1"></i> Juventude IEAPC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="oracao" class="py-20 bg-brand-navy relative text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <i class="fa-solid fa-hands-praying text-4xl text-brand-gold mb-3"></i>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold">Pedido de Oração</h2>
+                <p class="text-slate-300 mt-2 max-w-xl mx-auto text-sm sm:text-base">
+                    Coloque seu pedido abaixo. Nossa equipe de intercessores estará orando por sua intenção.
+                </p>
+            </div>
+
+            <div class="bg-brand-navyLight p-6 sm:p-10 rounded-2xl shadow-2xl border border-brand-gold/30">
+                <form id="prayerForm" onsubmit="handlePrayerSubmit(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2" for="name">Seu Nome</label>
+                            <input type="text" id="name" required placeholder="Digite seu nome" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2" for="whatsapp">WhatsApp / Celular</label>
+                            <input type="tel" id="whatsapp" placeholder="(41) 99999-9999" class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-brand-gold mb-2" for="request">Motivo de Oração</label>
+                        <textarea id="request" rows="4" required placeholder="Escreva detalhadamente como podemos orar por você..." class="w-full bg-brand-navy border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-gold transition-colors resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full gold-gradient-bg text-brand-navy font-bold py-4 rounded-xl shadow-lg hover:brightness-110 transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-paper-plane fa-regular"></i>
+                        <span>Enviar Pedido de Oração</span>
+                    </button>
+                </form>
+
+                <div id="prayerSuccess" class="hidden text-center py-8 space-y-4">
+                    <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto text-3xl">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white">Pedido Enviado com Sucesso!</h3>
+                    <p class="text-slate-300 text-sm max-w-md mx-auto">
+                        Estaremos unidos em fé em favor da sua vida!
+                    </p>
+                    <button onclick="resetPrayerForm()" class="text-brand-gold text-xs underline font-semibold mt-4 hover:text-white">
+                        Enviar outro pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dizimos" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-semibold text-brand-goldDark tracking-widest uppercase mb-2">Contribuição e Generosidade</h2>
+                <p class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy">Dízimos e Ofertas</p>
+                <div class="w-20 h-1.5 gold-gradient-bg mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="bg-brand-sand border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <span class="inline-block px-3 py-1 bg-brand-navy text-brand-gold rounded-full text-xs font-bold mb-4">
+                        <i class="fa-solid fa-qrcode mr-1"></i> PIX Oficial
+                    </span>
+                    <h3 class="font-serif text-2xl font-bold text-brand-navy mb-3">Contribuição via PIX</h3>
+                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                        Contribua com alegria para a manutenção dos trabalhos da igreja, ações sociais e avanço da Missão em Colombo.
+                    </p>
+                    <div class="space-y-1 text-xs text-slate-500">
+                        <p><strong class="text-slate-700">Favorecido:</strong> Igreja Evangélica Aliança Plena</p>
+                        <p><strong class="text-slate-700">Cidade:</strong> Colombo - PR</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-brand-gold/40 shadow-md text-center space-y-4">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Chave PIX da Igreja</p>
+                    <div class="bg-slate-100 p-3 rounded-xl border border-slate-200 font-mono text-sm text-brand-navy font-bold flex items-center justify-between">
+                        <span id="pixKeyText">contato@ieapcolombo.com.br</span>
+                        <button onclick="copyPix()" class="text-brand-goldDark hover:text-brand-navy font-sans text-xs flex items-center gap-1 bg-white px-3 py-1.5 rounded-lg border shadow-sm">
+                            <i class="fa-solid fa-copy"></i>
+                            <span id="copyBtnText">Copiar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-xs font-semibold text-brand-goldDark tracking-widest uppercase mb-2">Fale Conosco</h2>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-brand-navy mb-6">Estamos em Colombo - PR</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy">Endereço</h4>
+                                <p class="text-slate-600 text-sm">Colombo - PR, Brasil</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-navy text-brand-gold flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-navy">WhatsApp</h4>
+                                <a href="https://wa.me/5541999999999" target="_blank" class="text-slate-600 hover:text-brand-goldDark text-sm underline font-medium">
+                                    Enviar mensagem no WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-navy rounded-3xl p-8 text-white flex flex-col justify-between shadow-xl border border-brand-gold/30">
+                    <div>
+                        <h4 class="font-serif text-2xl font-bold mb-2">Venha nos Visitar</h4>
+                        <p class="text-slate-300 text-sm">
+                            IEAPC - Igreja Evangélica Aliança Plena em Colombo.
+                        </p>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="mt-6 w-full bg-white text-brand-navy font-bold py-3.5 rounded-xl text-center hover:bg-brand-gold transition-colors flex items-center justify-center gap-2 text-sm shadow">
+                        <i class="fa-solid fa-route"></i>
+                        <span>Abrir Rota no Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-navyDark text-slate-400 py-12 border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+                <h4 class="font-serif font-bold text-white tracking-wider">IEAPC COLOMBO</h4>
+                <p class="text-xs text-slate-400">Palavra • Comunicação • Missão</p>
+            </div>
+            <p class="text-xs text-slate-500">&copy; <span id="year"></span> IEAPC - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-xmark');
+            });
+        });
+
+        function copyPix() {
+            const pixText = document.getElementById('pixKeyText').innerText;
+            const btnText = document.getElementById('copyBtnText');
+
+            const tempInput = document.createElement('input');
+            tempInput.value = pixText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            btnText.innerText = 'Copiado!';
+            setTimeout(() => { btnText.innerText = 'Copiar'; }, 2000);
+        }
+
+        function handlePrayerSubmit(e) {
+            e.preventDefault();
+            document.getElementById('prayerForm').classList.add('hidden');
+            document.getElementById('prayerSuccess').classList.remove('hidden');
+        }
+
+        function resetPrayerForm() {
+            document.getElementById('prayerForm').reset();
+            document.getElementById('prayerForm').classList.remove('hidden');
+            document.getElementById('prayerSuccess').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
